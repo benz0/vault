@@ -150,6 +150,20 @@ None.
 
 ## Known issues
 
+### Vault DR Replication Secondary UI only displays Vault logo afer upgrade
+
+| Change      | Status | Affected version                       | Fixed version
+| ----------- | ------ | -------------------------------------- | --------------------
+| Known issue | Open   | 1.20.x                                 | 1.20.3
+
+In Vault 1.20.x if an admin browses to the Vault DR secondary UI it will point to `https://vault.url.com:8200/ui`
+and the admin will only see a Vault logo on a blank white page.
+
+#### Recommendation
+
+As a workaround administrators can maually update the URL to include `/vault/replication-dr-promote/details` (https://vault.url.com:8200/ui/vault/replication-dr-promote/details) which should result in the display of the DR Cluster details page. This bug only impacts the Vault DR Secondary UI and does not impact the ability to do a DR failover.
+
+
 ### Snowflake DB secrets engine key pair authentication not refreshing credentials successfully ((#snowflake-keypair-refresh))
 
 | Change      | Status | Affected version                       | Fixed version
